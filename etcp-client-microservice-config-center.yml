@@ -1,0 +1,73 @@
+spring: 
+  profiles:
+    active:
+    - dev
+    
+--- # 开发环境
+server:
+  port: 8001
+spring: 
+   profiles: dev
+   application: 
+    name: etcp-client-microservice-config-center
+    
+eureka: 
+  client: # 将客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: microservice-provider-8001
+    prefer-ip-address: true
+ 
+info:
+  app.name: etc-microservice-springcloud
+  company.name: mininglamp
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  
+--- # 测试环境
+server:
+  port: 8001
+spring: 
+   profiles: test
+   application: 
+    name: etcp-client-microservice-config-center
+ 
+eureka: 
+  client: # 将客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: microservice-provider-8001
+    prefer-ip-address: true
+ 
+info:
+  app.name: etc-microservice-springcloud
+  company.name: mininglamp
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  
+--- # 发布环境
+server:
+  port: 8001
+spring: 
+   profiles: prod
+   application: 
+    name: etcp-client-microservice-config-center
+   
+ 
+eureka: 
+  client: # 将客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: microservice-provider-8001
+    prefer-ip-address: true
+ 
+info:
+  app.name: etc-microservice-springcloud
+  company.name: mininglamp
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  
+  
