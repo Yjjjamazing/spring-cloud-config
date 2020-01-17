@@ -13,12 +13,8 @@ spring:
     
 eureka: 
   client: # 将客户端注册进eureka服务列表内
-    region: eurekaRegion
-    availabilityZones:
-      eurekaRegion: local_dev
     service-url: 
       defaultZone: http://192.168.56.1:9001/eureka/
-    fetchRemoteRegionsRegistry: eurekaRegion
   instance:
     instance-id: consumer-microservice-config-center
     prefer-ip-address: true
