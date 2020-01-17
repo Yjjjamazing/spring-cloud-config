@@ -17,7 +17,7 @@ eureka:
     availabilityZones:
       eurekaRegion: local_dev
     service-url: 
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://192.168.56.1:7001/eureka
     fetchRemoteRegionsRegistry: eurekaRegion
   instance:
     instance-id: consumer-microservice-config-center
@@ -39,7 +39,7 @@ eureka:
     availabilityZones:
       eurekaRegion: local_test
     service-url: 
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://192.168.56.1:7001/eureka
     fetchRemoteRegionsRegistry: eurekaRegion
   instance:
     appname: microservice-provider
