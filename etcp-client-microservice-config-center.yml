@@ -21,11 +21,7 @@ eureka:
     fetchRemoteRegionsRegistry: eurekaRegion
   instance:
     appname: iop.dev.v1_1_0
-    virtual-host-name: ${eureka.instance.appname}
-    secure-virtual-host-name: ${eureka.instance.appname}
     instance-id: microservice-provider
-    home-page-url-path: /microservice-provider/
-    status-page-url-path: /microservice-provider/health
     prefer-ip-address: true
     metadata-map:
       zone: local_dev
