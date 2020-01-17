@@ -19,7 +19,7 @@ eureka:
     register-with-eureka: false # 当前的eureka-server自己不注册进服务列表中
     fetch-registry: false # 不通过eureka获取注册信息
     service-url: 
-      defaultZone: http://testEureka:7001/eureka/
+      defaultZone: http://192.168.56.1:9001/eureka/
       
 --- # 测试环境
 server: 
