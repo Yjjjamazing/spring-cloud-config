@@ -20,8 +20,7 @@ eureka:
       defaultZone: http://localhost:7001/eureka
     fetchRemoteRegionsRegistry: eurekaRegion
   instance:
-    appname: microservice-provider
-    instance-id: microservice-provider
+    instance-id: consumer-microservice-config-center
     prefer-ip-address: true
 
 
