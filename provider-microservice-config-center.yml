@@ -20,6 +20,7 @@ eureka:
       defaultZone: http://localhost:7001/eureka
     fetchRemoteRegionsRegistry: eurekaRegion
   instance:
+    appname: microservice-provider
     instance-id: microservice-provider
     prefer-ip-address: true
 
@@ -42,7 +43,7 @@ eureka:
       defaultZone: http://localhost:7001/eureka
     fetchRemoteRegionsRegistry: eurekaRegion
   instance:
-    appname: iop.test.v1_1_0
+    appname: microservice-provider
     virtual-host-name: ${eureka.instance.appname}
     secure-virtual-host-name: ${eureka.instance.appname}
     instance-id: microservice-provider
