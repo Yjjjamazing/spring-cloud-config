@@ -13,17 +13,26 @@ spring:
     
 eureka: 
   client: # 将客户端注册进eureka服务列表内
+    region: eurekaRegion
+    availabilityZones:
+      eurekaRegion: local_dev
     service-url: 
       defaultZone: http://localhost:7001/eureka
+    fetchRemoteRegionsRegistry: eurekaRegion
   instance:
-    instance-id: microservice-provider-8001
+    appname: iop.dev.v1_1_0
+    virtual-host-name: ${eureka.instance.appname}
+    secure-virtual-host-name: ${eureka.instance.appname}
+    instance-id: microservice-provider
+    home-page-url-path: /microservice-provider/
+    status-page-url-path: /microservice-provider/health
     prefer-ip-address: true
- 
-info:
-  app.name: etc-microservice-springcloud
-  company.name: mininglamp
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+    metadata-map:
+      zone: local_dev
+      line: iop
+      contextPath: microservice-provider
+      version: v1_1_0
+
   
 --- # 测试环境
 server:
@@ -35,17 +44,25 @@ spring:
  
 eureka: 
   client: # 将客户端注册进eureka服务列表内
+    region: eurekaRegion
+    availabilityZones:
+      eurekaRegion: local_test
     service-url: 
       defaultZone: http://localhost:7001/eureka
+    fetchRemoteRegionsRegistry: eurekaRegion
   instance:
-    instance-id: microservice-provider-8001
+    appname: iop.test.v1_1_0
+    virtual-host-name: ${eureka.instance.appname}
+    secure-virtual-host-name: ${eureka.instance.appname}
+    instance-id: microservice-provider
+    home-page-url-path: /microservice-provider/
+    status-page-url-path: /microservice-provider/health
     prefer-ip-address: true
- 
-info:
-  app.name: etc-microservice-springcloud
-  company.name: mininglamp
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+    metadata-map:
+      zone: local_test
+      line: iop
+      contextPath: microservice-provider
+      version: v1_1_0
   
 --- # 发布环境
 server:
@@ -58,16 +75,24 @@ spring:
  
 eureka: 
   client: # 将客户端注册进eureka服务列表内
+    region: eurekaRegion
+    availabilityZones:
+      eurekaRegion: local_prod
     service-url: 
       defaultZone: http://localhost:7001/eureka
+    fetchRemoteRegionsRegistry: eurekaRegion
   instance:
-    instance-id: microservice-provider-8001
+    appname: iop.prod.v1_1_0
+    virtual-host-name: ${eureka.instance.appname}
+    secure-virtual-host-name: ${eureka.instance.appname}
+    instance-id: microservice-provider
+    home-page-url-path: /microservice-provider/
+    status-page-url-path: /microservice-provider/health
     prefer-ip-address: true
- 
-info:
-  app.name: etc-microservice-springcloud
-  company.name: mininglamp
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+    metadata-map:
+      zone: local_prod
+      line: iop
+      contextPath: microservice-provider
+      version: v1_1_0
   
   
