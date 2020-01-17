@@ -20,14 +20,9 @@ eureka:
       defaultZone: http://localhost:7001/eureka
     fetchRemoteRegionsRegistry: eurekaRegion
   instance:
-    appname: iop.dev.v1_1_0
     instance-id: microservice-provider
     prefer-ip-address: true
-    metadata-map:
-      zone: local_dev
-      line: iop
-      contextPath: microservice-provider
-      version: v1_1_0
+
 
   
 --- # 测试环境
