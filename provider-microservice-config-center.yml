@@ -5,7 +5,7 @@ spring:
     
 --- # 开发环境
 server:
-  port: 8001
+  port: 8000
 spring: 
    profiles: dev
    application: 
@@ -62,7 +62,7 @@ eureka:
   
 --- # 发布环境
 server:
-  port: 8001
+  port: 8002
 spring: 
    profiles: prod
    application: 
